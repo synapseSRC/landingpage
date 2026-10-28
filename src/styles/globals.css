@@ -73,7 +73,7 @@
 }
 
 ::selection {
-  background-color: rgba(168, 85, 247, 0.2);
+  background-color: rgba(34, 211, 238, 0.18);
   color: hsl(var(--foreground));
 }
 
@@ -102,9 +102,9 @@ html, body {
 }
 
 .gradient {
-  background: conic-gradient(from 230.29deg at 51.63% 52.16%, rgb(36, 0, 255) 0deg, rgb(0, 135, 255) 67.5deg, rgb(108, 39, 157) 198.75deg, rgb(24, 38, 163) 251.25deg, rgb(54, 103, 196) 301.88deg, rgb(105, 30, 255) 360deg);
+  background: conic-gradient(from 230.29deg at 51.63% 52.16%, rgb(124, 58, 237) 0deg, rgb(34, 211, 238) 67.5deg, rgb(99, 102, 241) 198.75deg, rgb(56, 189, 248) 251.25deg, rgb(45, 212, 191) 301.88deg, rgb(139, 92, 246) 360deg);
 }
 
 .not-found {
-  box-shadow: rgba(150, 18, 226, 0.3) 5px 5px;
+  box-shadow: rgba(34, 211, 238, 0.28) 5px 5px;
 }

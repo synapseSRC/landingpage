@@ -1,180 +1,292 @@
-import { AnimationContainer, MaxWidthWrapper } from "@/components";
-import React from 'react';
+import LegalLayout, { LegalList, SupportLink } from "@/components/marketing/legal-layout";
+import { generateMetadata } from "@/utils";
+import { SUPPORT_EMAIL } from "@/utils/constants/site";
+import Link from "next/link";
+
+export const metadata = generateMetadata({
+    title: "Privacy Policy — Synapse",
+    description:
+        "What Synapse stores about you on the hosted network, how end-to-end encryption changes that, and what a self-hosted node operator is responsible for.",
+});
 
 const Privacy = () => {
     return (
-        <MaxWidthWrapper className="max-w-3xl mx-auto px-8 mb-40">
-            <AnimationContainer delay={0.1} className="w-full">
-                <h1 className="text-4xl md:text-6xl font-heading font-bold my-12 text-center w-full">
-                    Privacy Policy
-                </h1>
-                <p className="text-sm mb-2 italic mt-20">
-                    Last updated: 17th June 2024
-                </p>
-                <p className="mt-4">
-                    At <strong>Linkify</strong>, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services.
-                </p>
-
-                <h2 className="text-xl font-medium mt-8">
-                    Information We Collect
-                </h2>
-
-                <h3 className="text-lg mt-4">
-                    Personal Information
-                </h3>
-                <p className="mt-8 text-muted-foreground">
-                    When you register for an account or use our services, we may collect personal information that can identify you, such as your name, email address, and payment information.
-                </p>
-
-                <h3 className="text-lg font-medium mt-12">
-                    Non-Personal Information
-                </h3>
-                <p className="mt-8 text-muted-foreground">
-                    We may also collect non-personal information about your use of the service, such as IP addresses, browser types, referring URLs, and other technical data.
-                </p>
-
-                <h3 className="text-lg font-medium mt-8">
-                    Cookies and Tracking Technologies
-                </h3>
-                <p className="mt-8">
-                    We use cookies and similar tracking technologies to collect and store information about your interactions with our website. You can manage your cookie preferences through your browser settings.
-                </p>
-
-                <h2 className="text-xl font-medium mt-12">
-                    How We Use Your Information
-                </h2>
-
-                <h3 className="text-lg mt-8">
-                    Provide and Improve Services
-                </h3>
-                <div className="mt-8">
-                    We use the information we collect to:
-                    <ul className="list-disc ml-8 text-muted-foreground">
-                        <li>Provide, operate, and maintain our services.</li>
-                        <li>Improve and personalize your experience.</li>
-                        <li>Process transactions and manage your account.</li>
-                    </ul>
-                </div>
-
-                <h3 className="text-xl font-medium mt-12">
-                    Communication
-                </h3>
-                <div className="mt-8">
-                    We may use your information to:
-                    <ul className="list-disc text-muted-foreground ml-8">
-                        <li>Send you updates, promotional materials, and other information related to our services.</li>
-                        <li>Respond to your inquiries and provide customer support.</li>
-                    </ul>
-                </div>
-
-                <h3 className="text-lg mt-8">
-                    Analytics and Research
-                </h3>
-                <div className="mt-8">
-                    We use non-personal information for analytical purposes, such as:
-                    <ul className="list-disc text-muted-foreground ml-8">
-                        <li>Monitoring and analyzing usage trends and preferences.</li>
-                        <li>Conducting research and improving our services.</li>
-                    </ul>
-                </div>
-
-                <h2 className="text-xl font-medium mt-12">
-                    How We Share Your Information
-                </h2>
-
-                <h3 className="text-lg mt-8">
-                    Service Providers
-                </h3>
-                <p className="mt-8 text-muted-foreground">
-                    We may share your information with third-party service providers who assist us in operating our services, such as payment processors, email services, and hosting providers.
-                </p>
-
-                <h3 className="text-lg mt-8">
-                    Legal Requirements
-                </h3>
-                <p className="mt-8 text-muted-foreground">
-                    We may disclose your information if required to do so by law or in response to valid requests by public authorities.
-                </p>
-
-                <h3 className="text-lg mt-8">
-                    Business Transfers
-                </h3>
-                <p className="mt-8 text-muted-foreground">
-                    In the event of a merger, acquisition, or sale of all or a portion of our assets, your information may be transferred to the acquiring entity.
-                </p>
-
-                <h2 className="text-xl font-medium mt-12">
-                    Data Security
-                </h2>
-                <p className="mt-8 text-muted-foreground">
-                    We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, loss, or alteration. However, no method of transmission over the internet or method of electronic storage is 100% secure.
-                </p>
-
-                <h2 className="text-xl font-medium mt-12">
-                    Data Retention
-                </h2>
-                <p className="mt-8 text-muted-foreground">
-                    We retain your personal information for as long as necessary to fulfil the purposes for which it was collected, comply with our legal obligations, resolve disputes, and enforce our agreements.
-                </p>
-
-                <h2 className="text-xl font-medium mt-12">
-                    Your Rights and Choices
-                </h2>
-
-                <h3 className="text-lg mt-8">
-                    Access and Update
-                </h3>
-                <p className="mt-8 text-muted-foreground">
-                    You have the right to access and update your personal information. You can do this by logging into your account and updating your profile settings.
-                </p>
-
-                <h3 className="text-lg mt-8">
-                    Opt-Out
-                </h3>
-                <p className="mt-8 text-muted-foreground">
-                    You can opt out of receiving promotional emails from us by following the unsubscribe instructions in those emails. You may also contact us directly to opt out.
-                </p>
-
-                <h3 className="text-lg mt-8">
-                    Data Deletion
-                </h3>
-                <p className="mt-8 text-muted-foreground">
-                    You have the right to request the deletion of your personal information. Please contact us at support@linkify.com to make this request.
-                </p>
-
-                <h2 className="text-xl font-medium mt-12">
-                    Children&apos;s Privacy
-                </h2>
-                <p className="mt-8 text-muted-foreground">
-                    Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children under 18. If we become aware that we have collected personal information from a child under 18, we will take steps to delete such information.
-                </p>
-
-                <h2 className="text-xl font-medium mt-12">
-                    International Data Transfers
-                </h2>
-                <p className="mt-8 text-muted-foreground">
-                    Your information may be transferred to and processed in countries other than your own. We will ensure that appropriate safeguards are in place to protect your personal information when it is transferred across borders.
-                </p>
-
-                <h2 className="text-xl font-medium mt-12">
-                    Changes to This Privacy Policy
-                </h2>
-                <p className="mt-8 text-muted-foreground">
-                    We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on our website and updating the &quot;Last updated&quot; date at the top of this page.
-                </p>
-
-                <h2 className="text-xl font-medium mt-12">
-                    Contact Us
-                </h2>
-                <p className="mt-8 text-muted-foreground">
-                    If you have any questions or concerns about this Privacy Policy, please contact us at support@linkify.io.
-                </p>
-
-                <p className="mt-8 font-medium">
-                    By using Linkify, you acknowledge that you have read, understood, and agree to the terms of this Privacy Policy.
-                </p>
-            </AnimationContainer>
-        </MaxWidthWrapper>
+        <LegalLayout
+            title="Privacy Policy"
+            updated="Last updated: 15th October 2026"
+            intro={
+                <>
+                    This policy explains what Synapse collects when you use the hosted network, why it is
+                    collected, and what you can do about it. It also explains where responsibility shifts
+                    when you run your own node instead. Synapse is MIT licensed software — the privacy
+                    behaviour described here is the behaviour of the published source, not a promise that
+                    lives only on this page.
+                </>
+            }
+            sections={[
+                {
+                    heading: "The hosted network and your own node",
+                    body: (
+                        <>
+                            <p>
+                                There are two ways to use Synapse, and they have different operators.
+                            </p>
+                            <LegalList
+                                items={[
+                                    <>
+                                        <strong className="text-foreground">Hosted network.</strong> We run
+                                        the node at synapse.app and act as the data controller for the
+                                        information described below.
+                                    </>,
+                                    <>
+                                        <strong className="text-foreground">Self-hosted node.</strong> You, or
+                                        whoever runs the server you connect to, is the operator and controller.
+                                        The same data categories apply, but their handling, retention and legal
+                                        basis are that operator&apos;s responsibility. Publish your own policy
+                                        for your node.
+                                    </>,
+                                ]}
+                            />
+                            <p>
+                                Direct messages are end-to-end encrypted either way, so running or joining a
+                                node never requires trusting a server with message plaintext.
+                            </p>
+                        </>
+                    ),
+                },
+                {
+                    heading: "Information we collect",
+                    body: (
+                        <>
+                            <LegalList
+                                items={[
+                                    <>
+                                        <strong className="text-foreground">Account data.</strong> Handle,
+                                        display name, email address used to register, and hashed credentials.
+                                    </>,
+                                    <>
+                                        <strong className="text-foreground">Profile data.</strong> Avatar,
+                                        bio, pronouns and the device presence you choose to expose.
+                                    </>,
+                                    <>
+                                        <strong className="text-foreground">Content.</strong> Messages,
+                                        threads, reactions, attachments, space descriptions and pins you
+                                        create. Encrypted message bodies are stored as ciphertext.
+                                    </>,
+                                    <>
+                                        <strong className="text-foreground">Membership data.</strong> Which
+                                        spaces you belong to, your role in each, and channel read state.
+                                    </>,
+                                    <>
+                                        <strong className="text-foreground">Sync and device metadata.</strong>{" "}
+                                        Registered device names, client versions, push notification tokens, and
+                                        the sync cursor for each device.
+                                    </>,
+                                    <>
+                                        <strong className="text-foreground">Diagnostics.</strong> Crash reports
+                                        and performance traces, sent only when you submit them. The hosted
+                                        network serves no advertising and runs no third-party tracking pixels.
+                                    </>,
+                                ]}
+                            />
+                            <p>
+                                We do not collect your contacts, and we do not build a behavioural profile of
+                                you.
+                            </p>
+                        </>
+                    ),
+                },
+                {
+                    heading: "Messages and end-to-end encryption",
+                    body: (
+                        <>
+                            <p>
+                                Direct messages are encrypted on your device with keys that are generated
+                                locally and never uploaded in plaintext. A node stores the resulting
+                                ciphertext plus the routing metadata it needs to deliver a message: sender,
+                                recipient, space, and timestamp. Group messages in spaces are encrypted in
+                                transit and, where a space enables it, end-to-end as well.
+                            </p>
+                            <p className="mt-4">
+                                Encryption protects content. It does not hide the fact that two accounts
+                                exchanged messages, which is why metadata minimisation and retention limits
+                                matter as much as the cryptography.
+                            </p>
+                        </>
+                    ),
+                },
+                {
+                    heading: "How we use information",
+                    body: (
+                        <LegalList
+                            items={[
+                                "To deliver messages, threads and notifications to your devices.",
+                                "To keep sync consistent when you are offline or on several devices.",
+                                "To operate spaces: membership, roles, and the moderation audit log.",
+                                "To keep the software secure, including diagnosing crashes you choose to report.",
+                                "To answer support requests you send us.",
+                            ]}
+                        />
+                    ),
+                },
+                {
+                    heading: "How information is shared",
+                    body: (
+                        <>
+                            <p>
+                                We do not sell personal information and we do not share it with advertisers.
+                                Information is disclosed only in these situations:
+                            </p>
+                            <LegalList
+                                items={[
+                                    <>
+                                        <strong className="text-foreground">Federation.</strong> Content you
+                                        post in a space that other nodes can read is delivered to those nodes
+                                        and becomes subject to their operators&apos; policies.
+                                    </>,
+                                    <>
+                                        <strong className="text-foreground">Infrastructure providers.</strong>{" "}
+                                        Hosting, object storage and email delivery, under processing
+                                        agreements.
+                                    </>,
+                                    <>
+                                        <strong className="text-foreground">Legal requests.</strong> Where we
+                                        are required to respond to a valid, binding request from an authority,
+                                        limited to the data a node actually holds — which for encrypted
+                                        messages means ciphertext.
+                                    </>,
+                                    <>
+                                        <strong className="text-foreground">A transfer of the project.</strong>{" "}
+                                        If the hosted network changes hands, this policy travels with the
+                                        data and users are notified.
+                                    </>,
+                                ]}
+                            />
+                        </>
+                    ),
+                },
+                {
+                    heading: "Retention",
+                    body: (
+                        <p>
+                            Account, content and membership data are kept while your account exists. Message
+                            ciphertext is retained so that new devices can catch up, subject to the retention
+                            window configured on the node. Push tokens are replaced as soon as a device
+                            unregisters. Crash diagnostics are aggregated after 30 days. Deleting your account
+                            removes your profile, content and membership within 30 days, except where a copy
+                            must persist in another node&apos;s federated history or in a legal hold.
+                        </p>
+                    ),
+                },
+                {
+                    heading: "Security",
+                    body: (
+                        <p>
+                            Traffic is encrypted in transit, credentials are stored using a memory-hard hash,
+                            and access to production systems is logged and limited to maintainers with a
+                            documented reason. Reproducible builds and signed releases let you verify that the
+                            client you installed matches the published source. No system is completely secure;
+                            if we learn of a breach affecting your data we will tell you and any affected node
+                            operators without unreasonable delay.
+                        </p>
+                    ),
+                },
+                {
+                    heading: "Your rights and choices",
+                    body: (
+                        <>
+                            <p>Wherever you live, you can:</p>
+                            <LegalList
+                                items={[
+                                    "Export your account, messages and media as machine-readable files from the client settings.",
+                                    "Correct your profile and account details at any time.",
+                                    "Delete your account, including its content, from every node you joined.",
+                                    "Revoke individual device sessions and rotate your encryption keys.",
+                                    "Object to processing, or request restriction, by contacting us.",
+                                ]}
+                            />
+                            <p>
+                                If you self-host, these operations are available to you as the operator through
+                                the same node API, and to your members through their client.
+                            </p>
+                        </>
+                    ),
+                },
+                {
+                    heading: "International transfers",
+                    body: (
+                        <p>
+                            The hosted network runs in the European Union and the United States. Where data is
+                            transferred outside your region we rely on standard contractual clauses, and
+                            federation means content you publish in a space may reach nodes in other
+                            jurisdictions. If cross-border processing is a constraint for your community, run a
+                            node inside the jurisdiction you need.
+                        </p>
+                    ),
+                },
+                {
+                    heading: "Children",
+                    body: (
+                        <p>
+                            Synapse is not directed at children under 16 and we do not knowingly collect their
+                            data on the hosted network. Communities who run a node for younger members set
+                            their own age assurance and moderation rules; the software supports that with role
+                            limits and private spaces. If you believe a child has created an account on the
+                            hosted network, contact us and we will delete it.
+                        </p>
+                    ),
+                },
+                {
+                    heading: "Open source and this policy",
+                    body: (
+                        <>
+                            <p>
+                                Because the clients and the node are published under the MIT license, you can
+                                verify every claim on this page against the code. If a release changes
+                                data-handling behaviour, the changelog entry and the diff are both public.
+                                Report anything that looks different from what is described here to{" "}
+                                <SupportLink email={SUPPORT_EMAIL} />.
+                            </p>
+                            <p className="mt-4">
+                                Our marketing site itself uses no analytics and sets no non-essential cookies.
+                            </p>
+                        </>
+                    ),
+                },
+                {
+                    heading: "Changes to this policy",
+                    body: (
+                        <p>
+                            We update this policy when the software changes in a way that affects data
+                            handling. The date at the top of the page is revised, the diff is published
+                            alongside the release notes at{" "}
+                            <Link href="/changelog" className="text-foreground underline underline-offset-4">
+                                the changelog
+                            </Link>
+                            , and material changes are announced in the Synapse space and by email to
+                            affected accounts.
+                        </p>
+                    ),
+                },
+                {
+                    heading: "Contact",
+                    body: (
+                        <p>
+                            Questions, requests or complaints about privacy: write to{" "}
+                            <SupportLink email={SUPPORT_EMAIL} />. You also have the right to complain to your
+                            local data protection authority. If you need a data processing agreement to run a
+                            community on the hosted network, ask for one at the same address.
+                        </p>
+                    ),
+                },
+            ]}
+            closing={
+                <>
+                    By using the hosted network you agree to this policy. If you disagree, run your own node
+                    instead — the software is yours to operate, and that is the point.
+                </>
+            }
+        />
     );
 };
 

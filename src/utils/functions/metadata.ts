@@ -1,48 +1,33 @@
 import { Metadata } from "next";
 
+import { APP_DOMAIN, APP_NAME } from "@/utils/constants/site";
+
 export const generateMetadata = ({
-    title = `${process.env.NEXT_PUBLIC_APP_NAME} - The Link Management Platform for Businesses`,
-    description = `${process.env.NEXT_PUBLIC_APP_NAME} is the link management platform for businesses. It helps you build, brand, and track your links.`,
-    image = "/thumbnail.png",
-    icons = [
-        {
-            rel: "apple-touch-icon",
-            sizes: "32x32",
-            url: "/apple-touch-icon.png"
-        },
-        {
-            rel: "icon",
-            sizes: "32x32",
-            url: "/favicon-32x32.png"
-        },
-        {
-            rel: "icon",
-            sizes: "16x16",
-            url: "/favicon-16x16.png"
-        },
-    ],
-    noIndex = false
+    title = `${APP_NAME} — Open-source social for every device`,
+    description = `${APP_NAME} is the open-source social app for DMs, communities and feeds. Native clients for Android, iOS, Windows, Linux and the CLI — with an open API and self-hosting built in.`,
+    image = "/opengraph-image.png",
 }: {
     title?: string;
     description?: string;
-    image?: string | null;
-    icons?: Metadata["icons"];
-    noIndex?: boolean;
+    image?: string;
 } = {}): Metadata => ({
+    metadataBase: new URL(APP_DOMAIN),
     title,
     description,
-    icons,
+    applicationName: APP_NAME,
     openGraph: {
         title,
         description,
-        ...(image && { images: [{ url: image }] }),
+        siteName: APP_NAME,
+        type: "website",
+        locale: "en_US",
+        url: APP_DOMAIN,
+        images: [image],
     },
     twitter: {
+        card: "summary_large_image",
         title,
         description,
-        ...(image && { card: "summary_large_image", images: [image] }),
-        creator: "@shreyassihasane",
+        images: [image],
     },
-    // metadataBase: new URL(process.env.APP_DOMAIN!),
-    ...(noIndex && { robots: { index: false, follow: false } }),
 });

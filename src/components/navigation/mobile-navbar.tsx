@@ -13,15 +13,12 @@ import {
     SheetContent,
     SheetTrigger
 } from "@/components/ui/sheet";
-import { cn, NAV_LINKS } from "@/utils";
-import { useAuth } from "@clerk/nextjs";
-import { LucideIcon, Menu, X } from "lucide-react";
+import { NAV_LINKS, cn } from "@/utils";
+import { DownloadIcon, LucideIcon, Menu, X } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from 'react';
 
 const MobileNavbar = () => {
-
-    const { isSignedIn, signOut } = useAuth();
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -33,32 +30,26 @@ const MobileNavbar = () => {
         <div className="flex lg:hidden items-center justify-end">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild>
-                    <Button size="icon" variant="ghost">
+                    <Button size="icon" variant="ghost" aria-label="Open navigation menu">
                         <Menu className="w-5 h-5" />
                     </Button>
                 </SheetTrigger>
-                <SheetContent className="w-screen">
+                <SheetContent className="w-screen" aria-label="Navigation menu">
                     <SheetClose asChild className="absolute top-3 right-5 bg-background z-20 flex items-center justify-center">
-                        <Button size="icon" variant="ghost" className="text-neutral-600">
+                        <Button size="icon" variant="ghost" className="text-neutral-600" aria-label="Close navigation menu">
                             <X className="w-5 h-5" />
                         </Button>
                     </SheetClose>
                     <div className="flex flex-col items-start w-full py-2 mt-10">
                         <div className="flex items-center justify-evenly w-full space-x-2">
-                            {isSignedIn ? (
-                                <Link href="/dashboard" className={buttonVariants({ variant: "outline", className: "w-full" })}>
-                                    Dashboard
-                                </Link>
-                            ) : (
-                                <>
-                                    <Link href="/auth/sign-in" className={buttonVariants({ variant: "outline", className: "w-full" })}>
-                                        Sign In
-                                    </Link>
-                                    <Link href="/auth/sign-up" className={buttonVariants({ className: "w-full" })}>
-                                        Sign Up
-                                    </Link>
-                                </>
-                            )}
+                            <Link
+                                href="/download"
+                                onClick={handleClose}
+                                className={buttonVariants({ variant: "accent", className: "w-full gap-1.5" })}
+                            >
+                                <DownloadIcon className="size-3.5" />
+                                Download
+                            </Link>
                         </div>
                         <ul className="flex flex-col items-start w-full mt-6">
                             <Accordion type="single" collapsible className="!w-full">

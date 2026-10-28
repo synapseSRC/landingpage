@@ -1,143 +1,106 @@
-import { BarChart3Icon, FolderOpenIcon, WandSparklesIcon } from "lucide-react";
-
-export const DEFAULT_AVATAR_URL = "https://api.dicebear.com/8.x/initials/svg?backgroundType=gradientLinear&backgroundRotation=0,360&seed=";
-
-export const PAGINATION_LIMIT = 10;
-
-export const COMPANIES = [
-    {
-        name: "Asana",
-        logo: "/assets/company-01.svg",
-    },
-    {
-        name: "Tidal",
-        logo: "/assets/company-02.svg",
-    },
-    {
-        name: "Innovaccer",
-        logo: "/assets/company-03.svg",
-    },
-    {
-        name: "Linear",
-        logo: "/assets/company-04.svg",
-    },
-    {
-        name: "Raycast",
-        logo: "/assets/company-05.svg",
-    },
-    {
-        name: "Labelbox",
-        logo: "/assets/company-06.svg",
-    }
-] as const;
+import { DownloadIcon, MessagesSquareIcon, ServerIcon } from "lucide-react";
 
 export const PROCESS = [
     {
-        title: "Organize Your Links",
-        description: "Efficiently categorize and tag your links for quick access and easy management.",
-        icon: FolderOpenIcon,
+        title: "Install Synapse",
+        description:
+            "Grab a native client for Android, iOS, Windows, Linux or the terminal. Same account, same protocol, whichever way you like to work.",
+        icon: DownloadIcon,
     },
     {
-        title: "Shorten and Customize",
-        description: "Create concise, branded links that are easy to share and track.",
-        icon: WandSparklesIcon,
+        title: "Join or self-host",
+        description:
+            "Start on the hosted network in a minute, or run your own node with docker compose and keep your community's data on your own hardware.",
+        icon: ServerIcon,
     },
     {
-        title: "Analyze and Optimize",
-        description: "Gain insights into link performance and optimize for better engagement.",
-        icon: BarChart3Icon,
+        title: "Make it yours",
+        description:
+            "Script it with the CLI, build on the open API, fork the clients. Synapse is MIT licensed, so the whole stack is yours to change.",
+        icon: MessagesSquareIcon,
     },
 ] as const;
 
-export const FEATURES = [
-    {
-        title: "Link shortening",
-        description: "Create short links that are easy to remember and share.",
-    },
-    {
-        title: "Advanced analytics",
-        description: "Track and measure the performance of your links.",
-    },
-    {
-        title: "Password protection",
-        description: "Secure your links with a password.",
-    },
-    {
-        title: "Custom QR codes",
-        description: "Generate custom QR codes for your links.",
-    },
-    {
-        title: "Link expiration",
-        description: "Set an expiration date for your links.",
-    },
-    {
-        title: "Team collaboration",
-        description: "Share links with your team and collaborate in real-time.",
-    },
-] as const;
+export type Review = {
+    name: string;
+    username: string;
+    context: string;
+    rating: number;
+    review: string;
+};
 
-export const REVIEWS = [
+// Placeholder quotes for layout. Replace with real community feedback before launch.
+export const REVIEWS: Review[] = [
     {
-        name: "Michael Smith",
-        username: "@michaelsmith",
-        avatar: "https://randomuser.me/api/portraits/men/1.jpg",
+        name: "Nadia K.",
+        username: "@nadia",
+        context: "runs a self-hosted node for a hackerspace",
         rating: 5,
-        review: "This tool is a lifesaver! Managing and tracking my links has never been easier. A must-have for anyone dealing with numerous links."
+        review:
+            "Moved 400 members off a hosted platform onto our own box in an afternoon. The CLI did most of the work.",
     },
     {
-        name: "Emily Johnson",
-        username: "@emilyjohnson",
-        avatar: "https://randomuser.me/api/portraits/women/1.jpg",
+        name: "Tomás R.",
+        username: "@tomasr",
+        context: "backend engineer",
+        rating: 5,
+        review:
+            "The API is the first thing I checked and it held up. Webhooks are signed, the spec is published, nothing is magic.",
+    },
+    {
+        name: "Priya S.",
+        username: "@priya",
+        context: "maintains an open-source project",
+        rating: 5,
+        review:
+            "Our release bot lives in a 40-line script now. Threads keep the noise out of the main channel.",
+    },
+    {
+        name: "Ben O.",
+        username: "@beno",
+        context: "designer, Linux desktop",
         rating: 4,
-        review: "Very useful app! It has streamlined my workflow considerably. A few minor bugs, but overall a great experience."
+        review:
+            "Flatpak behaves like a real Linux app — shortcuts, media keys, no Electron memory creep.",
     },
     {
-        name: "Daniel Williams",
-        username: "@danielwilliams",
-        avatar: "https://randomuser.me/api/portraits/men/2.jpg",
+        name: "Lucia M.",
+        username: "@luciam",
+        context: "community manager",
         rating: 5,
-        review: "I've been using this app daily for months. The insights and analytics it provides are invaluable. Highly recommend it!"
+        review:
+            "Roles and the audit log are what I was missing. Moderation is boring now, which is exactly what I want.",
     },
     {
-        name: "Sophia Brown",
-        username: "@sophiabrown",
-        avatar: "https://randomuser.me/api/portraits/women/2.jpg",
+        name: "Kwame A.",
+        username: "@kwame",
+        context: "mobile developer",
+        rating: 5,
+        review:
+            "Compose offline on the train, and the drafts are already there when I open the laptop. That handoff is the whole product for me.",
+    },
+    {
+        name: "Ines D.",
+        username: "@inesd",
+        context: "sysadmin",
         rating: 4,
-        review: "This app is fantastic! It offers everything I need to manage my links efficiently."
+        review:
+            "One container, Postgres, done. Resource usage is low enough that I stopped treating it as a special service.",
     },
     {
-        name: "James Taylor",
-        username: "@jamestaylor",
-        avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+        name: "Marek V.",
+        username: "@marekv",
+        context: "research group lead",
         rating: 5,
-        review: "Absolutely love this app! It's intuitive and feature-rich. Has significantly improved how I manage and track links."
+        review:
+            "Our data stays on campus and encryption is on by default. Legal signed off in one meeting, which has never happened.",
     },
     {
-        name: "Olivia Martinez",
-        username: "@oliviamartinez",
-        avatar: "https://randomuser.me/api/portraits/women/3.jpg",
-        rating: 4,
-        review: "Great app with a lot of potential. It has already saved me a lot of time. Looking forward to future updates and improvements."
-    },
-    {
-        name: "William Garcia",
-        username: "@williamgarcia",
-        avatar: "https://randomuser.me/api/portraits/men/4.jpg",
+        name: "Sasha P.",
+        username: "@sashap",
+        context: "indie hacker",
         rating: 5,
-        review: "This app is a game-changer for link management. It's easy to use, extremely powerful and highly recommended!"
+        review:
+            "Read the protocol in an evening and wrote a working bridge the next day. Forking a client is a normal thing to do here.",
     },
-    {
-        name: "Mia Rodriguez",
-        username: "@miarodriguez",
-        avatar: "https://randomuser.me/api/portraits/women/4.jpg",
-        rating: 4,
-        review: "I've tried several link management tools, but this one stands out. It's simple, effective."
-    },
-    {
-        name: "Henry Lee",
-        username: "@henrylee",
-        avatar: "https://randomuser.me/api/portraits/men/5.jpg",
-        rating: 5,
-        review: "This app has transformed my workflow. Managing and analyzing links is now a breeze. I can't imagine working without it."
-    },
-] as const;
+];

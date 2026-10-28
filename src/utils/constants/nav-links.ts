@@ -1,61 +1,68 @@
-import { HelpCircleIcon, LineChartIcon, Link2Icon, LockIcon, NewspaperIcon, QrCodeIcon } from "lucide-react";
+import {
+    HelpCircleIcon,
+    MessagesSquareIcon,
+    NewspaperIcon,
+    RefreshCwIcon,
+    TerminalIcon,
+    UsersIcon,
+} from "lucide-react";
 
 export const NAV_LINKS = [
     {
         title: "Features",
-        href: "/features",
+        href: "/features/messaging",
         menu: [
             {
-                title: "Link Shortening",
-                tagline: "Shorten links and track their performance.",
-                href: "/features/link-shortening",
-                icon: Link2Icon,
+                title: "Messaging",
+                tagline: "Encrypted DMs, threads and reactions.",
+                href: "/features/messaging",
+                icon: MessagesSquareIcon,
             },
             {
-                title: "Password Protection",
-                tagline: "Secure your links with a password.",
-                href: "/features/password-protection",
-                icon: LockIcon,
+                title: "Communities",
+                tagline: "Spaces with channels, roles and moderation.",
+                href: "/features/communities",
+                icon: UsersIcon,
             },
             {
-                title: "Advanced Analytics",
-                tagline: "Gain insights into who is clicking your links.",
-                href: "/features/analytics",
-                icon: LineChartIcon,
+                title: "Sync",
+                tagline: "One conversation across every device.",
+                href: "/features/sync",
+                icon: RefreshCwIcon,
             },
             {
-                title: "Custom QR Codes",
-                tagline: "Use QR codes to reach your audience.",
-                href: "/features/qr-codes",
-                icon: QrCodeIcon,
+                title: "API & CLI",
+                tagline: "Open API, signed webhooks and a real terminal client.",
+                href: "/features/api",
+                icon: TerminalIcon,
             },
         ],
     },
     {
-        title: "Pricing",
-        href: "/pricing",
+        title: "Platforms",
+        href: "/download",
     },
     {
-        title: "Enterprise",
-        href: "/enterprise",
+        title: "Open Source",
+        href: "/open-source",
     },
     {
         title: "Resources",
-        href: "/resources",
+        href: "/resources/blog",
         menu: [
             {
                 title: "Blog",
-                tagline: "Read articles on the latest trends in tech.",
+                tagline: "Notes from building the protocol in the open.",
                 href: "/resources/blog",
                 icon: NewspaperIcon,
             },
             {
                 title: "Help",
-                tagline: "Get answers to your questions.",
+                tagline: "Install guides, accounts and support.",
                 href: "/resources/help",
                 icon: HelpCircleIcon,
             },
-        ]
+        ],
     },
     {
         title: "Changelog",
